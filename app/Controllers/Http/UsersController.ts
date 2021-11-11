@@ -1,8 +1,6 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-import { HttpContext, Request, Response, Router } from "@adonisjs/http-server/build/standalone";
-import User from "App/Models/User";
-import User from "App/Models/User";
+import { HttpContext } from "@adonisjs/http-server/build/standalone";
 import User from "App/Models/User";
 
 export default class UsersController {
@@ -15,5 +13,21 @@ export default class UsersController {
             name,
         })
         return user;
+
+    }
+
+
+    public async index (){
+
+        const all = await User.all()
+        console.log(User)
+        return all;
+    }
+    
+    
+        
+
+    
+
 
 }
